@@ -1,0 +1,12 @@
+from llama_parse import LlamaParse
+
+parser = LlamaParse(
+    api_key="YOUR_LLAMA_CLOUD_API_KEY",  # Get from cloud.llamaindex.ai
+    result_type="text"  # could be "json" if you need structured output
+)
+
+# Parse the file
+documents = parser.load_data("resume.pdf")
+
+for doc in documents:
+    print(doc.text)
